@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Ultra Pro Max 🐱‍👤</title>
+
+    <meta name="title" content="Windows Ultra Pro Max 🐱‍👤">
+    <meta name="description" content="Experience the next generation of web-based operating systems. Seamless, powerful, and blazing fast. A complete ecosystem for creators and gamers. Made by busyaaa_1">
+    <meta name="keywords" content="Windows Ultra Pro Max, NextGen OS, WebOS, Future Interface, busyaaa_1">
+    <meta name="author" content="busyaaa_1">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pro-windows.vercel.app/">
+    <meta property="og:title" content="Windows Ultra Pro Max | Beyond Limits">
+    <meta property="og:description" content="The most advanced web OS ever created. Integrated tools, AI-powered features, and high-end 3D games. Made by busyaaa_1">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Windows Ultra Pro Max 🐱‍👤">
+    <meta property="twitter:description" content="Redefining the web experience. Made by busyaaa_1">
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732221.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            background: #000;
+        }
+        
+        /* Modern Scrollbar: Windows 11/13 Edition */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body class="overflow-hidden select-none bg-black text-gray-100 font-sans antialiased">
+    <!-- <div id="video-wallpaper-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; background: #000;">
+    <div id="video-wallpaper-player"></div>
+    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.2);"></div>
+</div> -->
+
+    <main id="desktop" class="relative w-screen h-screen bg-cover bg-center overflow-hidden">
+        
+        <div id="context-menu" class="fixed z-[9999] hidden bg-[#202020] border border-white/10 rounded-lg shadow-xl w-48 py-1 backdrop-blur-md">
+            <div class="px-4 py-2 hover:bg-white/10 cursor-pointer text-sm" onclick="location.reload()">Refresh</div>
+            <div class="h-px bg-white/10 my-1"></div>
+            <div class="px-4 py-2 hover:bg-white/10 cursor-pointer text-sm" onclick="OS.WindowManager.minimizeAll()">Show Desktop</div>
+            <div class="px-4 py-2 hover:bg-white/10 cursor-pointer text-sm" onclick="OS.System.reset()">Reset OS</div>
+        </div>
+
+        <div id="desktop-icons" class="absolute inset-0 z-0 p-2 grid grid-flow-col grid-rows-[repeat(auto-fill,100px)] gap-2 content-start w-fit h-full">
+            </div>
+
+        <div id="windows-layer" class="absolute inset-0 z-10 pointer-events-none">
+
+
+            </div>
+
+        <div id="start-menu" class="fixed bottom-14 left-1/2 -translate-x-1/2 w-[600px] h-[650px] bg-[#202020]/95 backdrop-blur-xl rounded-lg border border-white/10 shadow-2xl transform transition-all duration-200 translate-y-[120%] z-50 flex flex-col">
+            <div class="p-6 pb-2">
+                <div class="bg-[#101010] flex items-center px-4 py-2 rounded border-b-2 border-blue-500">
+                    <span class="material-icons text-gray-400">search</span>
+                    <input type="text" placeholder="Type here to search" class="bg-transparent border-none outline-none text-sm ml-2 w-full text-white">
+                </div>
+            </div>
+            <div class="p-6 pt-2 flex-1 overflow-y-auto">
+                <h3 class="text-xs font-bold text-gray-400 mb-4 px-2">Pinned</h3>
+                <div id="start-apps-grid" class="grid grid-cols-6 gap-4">
+                    </div>
+            </div>
+            <div class="h-16 bg-[#101010]/50 border-t border-white/5 flex items-center justify-between px-8 rounded-b-lg">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center font-bold">U</div>
+                    <span class="text-sm font-medium" id="user-name-display">User</span>
+                </div>
+                <button onclick="window.close()" class="p-2 hover:bg-white/10 rounded">
+                    <span class="material-icons text-lg">power_settings_new</span>
+                </button>
+            </div>
+        </div>
+
+        <footer id="taskbar" class="fixed bottom-0 w-full h-12 bg-[#202020]/85 backdrop-blur-md z-[100] flex items-center justify-between px-4 border-t border-white/5">
+            <div class="w-1/4 hidden md:flex opacity-0"></div>
+
+            <div class="flex items-center gap-1 h-full" id="taskbar-center">
+
+
+<button id="start-btn" class="h-10 w-10 rounded-md hover:bg-white/10 flex items-center justify-center transition-all">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg" class="w-5 h-5" alt="Start">
+    </button>
+    
+    <!-- <button onclick="OS.WindowManager.open('copilot')" class="h-10 w-10 rounded-md hover:bg-white/10 flex items-center justify-center transition-all">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Microsoft_Copilot_Icon.svg" class="w-5 h-5" alt="Copilot">
+    </button> -->
+
+
+<!-- 
+                <button id="start-btn" class="h-10 w-10 rounded hover:bg-white/10 flex items-center justify-center transition-all active:scale-95">
+                    <span class="material-icons text-blue-400 text-2xl">grid_view</span>
+                </button> -->
+                </div>
+
+            <div class="w-1/4 flex justify-end items-center gap-3 h-full">
+                <div class="hover:bg-white/10 p-1 rounded px-2 cursor-pointer flex flex-col items-end leading-none" id="clock-container">
+                    <span id="clock-time" class="text-xs font-medium">12:00 PM</span>
+                    <span id="clock-date" class="text-[10px] text-gray-400">10/25/2023</span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

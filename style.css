@@ -1,0 +1,148 @@
+:root {
+    --win-bg: #202020;
+    --win-border: rgba(255, 255, 255, 0.08);
+    --accent: #60cdff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+
+/* Desktop Icon */
+/* Увеличенные иконки */
+.desktop-icon {
+    width: 100px; /* Было меньше */
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background 0.1s;
+    cursor: default;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.223);
+    border-radius: 15px;
+}
+
+.desktop-icon span.material-icons {
+    font-size: 32px !important; /* Увеличили саму иконку */
+    margin-bottom: 8px;
+}
+
+.desktop-icon span:last-child {
+    font-size: 13px; /* Чуть крупнее шрифт подписи */
+    font-weight: 500;
+}
+
+.dragging {
+    transition: none !important;
+    opacity: 0.8;
+    z-index: 9999;
+}
+
+/* Window Styles */
+.os-window {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: #202020;
+    border: 1px solid var(--win-border);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 200px;
+    /* Убираем top и left отсюда! Оставляем только для opacity и transform */
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out; 
+    pointer-events: auto;
+}
+
+/* Добавим специальный класс, который отключает анимации при драге */
+.dragging {
+    transition: none !important;
+}
+
+.os-window.active {
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.os-window.minimized {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.window-header {
+    height: 36px;
+    background: #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+}
+
+.window-content {
+    flex: 1;
+    position: relative;
+    background: #1e1e1e;
+}
+
+/* Iframe protection during drag */
+.dragging iframe { pointer-events: none; }
+
+/* Start Menu Animation */
+.start-open { transform: translate(-50%, 0) !important; }
+
+/* Code Editor Synthax Mock */
+.code-line { counter-increment: line; display: flex; font-family: 'Consolas', monospace; font-size: 13px; }
+.code-line::before { content: counter(line); color: #6e7681; width: 30px; text-align: right; margin-right: 15px; user-select: none; }
+.kwd { color: #569cd6; } .str { color: #ce9178; } .fun { color: #dcdcaa; }
+
+.desktop-icon {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.os-window {
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                height 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                left 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                top 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-radius 0.25s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.os-window.dragging {
+    transition: none !important; /* Убираем задержку при ручном перетаскивании */
+}
+
+.maximized {
+    z-index: 9000 !important;
+}
+/* 
+
+
+/* 
+
+#video-wallpaper-container iframe {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/* Если экран шире видео */
+/* @media (min-aspect-ratio: 16/9) {
+  #video-wallpaper-container iframe { height: 300%; top: -100%; }
+}
+/* Если экран выше видео */
+/* @media (max-aspect-ratio: 16/9) {
+  #video-wallpaper-container iframe { width: 300%; left: -100%; }
+}  */
