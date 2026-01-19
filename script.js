@@ -55,6 +55,30 @@ const Apps = {
                 <iframe src="https://www.bing.com/search?q=windows" class="flex-1 border-none"></iframe>
             </div>`,
     },
+
+    // НОВОЕЕ
+    // ......
+    // .....
+    diary: {
+        title: "e-Maktab Space",
+        icon: "menu_book", // Иконка книжки/дневника
+        color: "text-yellow-400",
+        content: (id) => `
+            <div class="flex flex-col h-full bg-[#121212]">
+                <div class="h-10 bg-[#1e1e1e] flex items-center px-4 border-b border-white/5">
+                    <div class="text-[11px] text-gray-400 flex items-center gap-2">
+                        <span class="material-icons text-xs">lock</span> 
+                        https://emaktab-space.vercel.app
+                    </div>
+                </div>
+                <iframe src="https://emaktab-space.vercel.app/" 
+                        class="flex-1 border-none"
+                        id="diary-frame-${id}"
+                        allow="clipboard-write"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+                </iframe>
+            </div>`,
+    },
     // notepad: {
     //     title: "Notepad",
     //     icon: "description",
@@ -672,4 +696,5 @@ OS.init();
 //     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
 //     const match = url.match(regExp);
 //     return (match && match[2].length === 11) ? match[2] : null;
+
 // }
