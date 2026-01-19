@@ -79,6 +79,19 @@ const Apps = {
                 </iframe>
             </div>`,
     },
+    gravity: {
+        title: "Gravity Particles",
+        icon: "blur_on", // Иконка, напоминающая скопление частиц
+        color: "text-indigo-300",
+        content: (id) => `
+            <div class="flex flex-col h-full bg-black">
+                <iframe src="https://gravity-particles.vercel.app/" 
+                        class="w-full h-full border-none"
+                        id="gravity-frame-${id}"
+                        sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </div>`,
+    },
     // notepad: {
     //     title: "Notepad",
     //     icon: "description",
@@ -698,3 +711,4 @@ OS.init();
 //     return (match && match[2].length === 11) ? match[2] : null;
 
 // }
+
