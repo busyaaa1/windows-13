@@ -128,6 +128,27 @@
 
     </main>
 
+    <div id="bsod" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #0078d7; color: white; font-family: 'Segoe UI', Tahoma, sans-serif; z-index: 10000; padding: 10%; box-sizing: border-box; cursor: none;">
+    <div style="font-size: 100px; margin-bottom: 20px;">:(</div>
+    <h1 style="font-weight: 300; font-size: 30px; line-height: 1.4; margin-bottom: 20px;">
+        На вашем ПК возникла проблема, и его необходимо перезагрузить. 
+        Мы лишь собираем некоторые сведения об ошибке, а затем будет выполнена перезагрузка.
+    </h1>
+    <div style="font-size: 24px; margin-bottom: 40px;">
+        <span id="bsod-progress">0</span>% завершено
+    </div>
+    <div style="display: flex; gap: 20px; align-items: center;">
+        <div style="width: 80px; height: 80px; background: white; padding: 5px;">
+            <div style="width: 100%; height: 100%; background: black; border: 4px solid white;"></div>
+        </div>
+        <div style="font-size: 14px; opacity: 0.8;">
+            Для получения дополнительных сведений об этой проблеме и способах ее решения посетите сайт https://www.windows.com/stopcode<br><br>
+            При обращении в службу поддержки предоставьте следующие сведения:<br>
+            Код остановки: CRITICAL_PROCESS_DIED
+        </div>
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
