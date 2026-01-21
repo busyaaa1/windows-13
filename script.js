@@ -625,7 +625,32 @@ OS.SystemTray = {
 };
 
 OS.System = {
-    reset() { if(confirm("Сбросить все настройки?")) { localStorage.removeItem("win11_state"); location.reload(); } }
+    reset() {
+        if (confirm("Сбросить все настройки? Система будет перезагружена.")) {
+            const bsod = document.getElementById("bsod");
+            const progressLabel = document.getElementById("bsod-progress");
+            
+            // 1. Показываем синий экран
+            bsod.style.display = "block";
+            
+            // 2. Имитируем рост процентов
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 20) + 5; // Случайный шаг
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // 3. Через 500мс после 100% делаем реальный сброс
+                    setTimeout(() => {
+                        localStorage.removeItem("win11_state");
+                        location.reload();
+                    }, 500);
+                }
+                progressLabel.innerText = progress;
+            }, 400); // Скорость обновления (весь процесс займет ~2-3 сек)
+        }
+    }
 };
 
 // Запуск
