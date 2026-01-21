@@ -59,6 +59,19 @@ const Apps = {
     // НОВОЕЕ
     // ......
     // .....
+    snake: {
+        title: "Snake Game",
+        icon: "gesture", // Иконка из Material Icons, похожая на изгиб змеи
+        color: "text-green-500",
+        content: (id) => `
+            <div class="flex flex-col h-full bg-black">
+                <iframe src="https://busyaaa1.github.io/snake/" 
+                        class="w-full h-full border-none"
+                        id="snake-frame-${id}"
+                        sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </div>`,
+    },
     diary: {
         title: "e-Maktab Space",
         icon: "menu_book", // Иконка книжки/дневника
@@ -405,7 +418,7 @@ open(appId) {
         const fullScreenApps = [
             'glowdrive', 'pinkmas', 'memory', 
             'stopwatch', 'calculator',
-            'miracle', 'typer', 'zenpop' // Твои новые приложения!
+            'miracle', 'typer', 'zenpop', 'snake' // Твои новые приложения!
         ];
         
         if (fullScreenApps.includes(appId)) {
@@ -736,4 +749,5 @@ OS.init();
 //     return (match && match[2].length === 11) ? match[2] : null;
 
 // }
+
 
