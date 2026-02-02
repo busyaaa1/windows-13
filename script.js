@@ -105,6 +105,9 @@ const Apps = {
                 </iframe>
             </div>`,
     },
+
+    /* Добавь это в объект Apps: */
+
     // notepad: {
     //     title: "Notepad",
     //     icon: "description",
@@ -189,6 +192,27 @@ const Apps = {
                     <span class="text-[9px] text-emerald-500 font-mono tracking-widest uppercase animate-pulse">Encrypted Session</span>
                     <span class="text-[9px] text-gray-500 font-mono">v3.0.1</span>
                 </div>
+            </div>`,
+    },
+    /* Добавь это в объект Apps: */
+
+    todo_new: {
+        title: "To-Do New",
+        icon: "task_alt", // Новая иконка галочки в кружке
+        color: "text-purple-400",
+        content: (id) => `
+            <div class="flex flex-col h-full bg-[#0f172a]">
+                <div class="h-9 bg-white/5 flex items-center px-4 border-b border-white/10">
+                    <div class="text-[10px] text-purple-300 font-mono flex items-center gap-2 uppercase tracking-widest">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>
+                        Next-Gen Task Manager
+                    </div>
+                </div>
+                <iframe src="https://busyaaa1.github.io/todo/" 
+                        class="flex-1 border-none"
+                        id="todo-new-frame-${id}"
+                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
+                </iframe>
             </div>`,
     },
     calculator: {
@@ -749,5 +773,6 @@ OS.init();
 //     return (match && match[2].length === 11) ? match[2] : null;
 
 // }
+
 
 
